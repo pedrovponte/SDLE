@@ -11,12 +11,13 @@ public class wuproxy {
         // Prepare our context and sockets
         try (ZContext context = new ZContext()){
             Socket frontend = context.createSocket(SocketType.XSUB);
-            frontend.connect("");
+            frontend.connect("tcp://localhost:5557");
 
             Socket backend = context.createSocket(SocketType.XPUB);
-            backend.connect(""); // bind vs connect??
+            backend.connect("tcp://localhost:5556");
 
-            frontend
+            // Run the proxy until the user interrupts us
+            ZMQ.proxy(frontend, backend, null);
         }
     }
 }

@@ -12,3 +12,7 @@ Praticas/TP1/PubSub/.project
 Praticas/TP2/SharedQueue_DEALER_ROUTER/.idea/
 
 Praticas/TP3/proxy_XPUB_XSUB/.idea/
+
+*.idea/
+
+*venv/
